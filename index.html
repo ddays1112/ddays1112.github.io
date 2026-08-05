@@ -147,28 +147,26 @@
             margin-top: 2.5rem;
         }
 
-        /* 3D 翻轉舞台設定（調整對齊方式） */
+        /* 3D 翻轉舞台設定 */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
             gap: 2rem;
             margin-bottom: 1.5rem;
-            align-items: start; /* 讓同排卡片獨立縮放，不強行拉高 */
+            align-items: start;
         }
 
-        /* 🃏 翻牌外殼容器（改為彈性高度） */
+        /* 🃏 翻牌外殼容器（將高度提高到 450px 確保舒適留白） */
         .flip-card {
             background-color: transparent;
-            min-height: 320px; /* 最小高度，取消固定 480px */
+            height: 450px; 
             perspective: 1000px; 
-            height: auto;
         }
 
         .flip-card-inner {
             position: relative;
             width: 100%;
             height: 100%;
-            min-height: 320px;
             text-align: left;
             transform-style: preserve-3d;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -181,6 +179,7 @@
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* 確保前後面皆為 100% 高度且支援獨立滾動 */
         .card-front, .card-back {
             position: absolute;
             top: 0;
@@ -191,11 +190,12 @@
             backface-visibility: hidden;
             border-radius: 20px;
             box-sizing: border-box;
-            padding: 1.5rem;
+            padding: 1.2rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            overflow-y: auto; 
+            overflow-y: auto; /* 開啟滾動軸，字多可向下滑動 */
+            -webkit-overflow-scrolling: touch; /* 讓 iOS 手機滑動更順暢 */
         }
 
         .card-front {
@@ -211,6 +211,8 @@
             transform: rotateY(180deg); 
             border: 3px dashed var(--dark-yellow);
             z-index: 1;
+            justify-content: flex-start; /* 讓內容由上而下自然排列 */
+            gap: 0.8rem;
         }
 
         .badge-container {
@@ -284,7 +286,6 @@
             position: relative;
             width: 100%;
             height: 180px;
-            margin-bottom: 0.8rem;
             overflow: hidden;
             border-radius: 12px;
             border: 3px solid white;
@@ -401,7 +402,6 @@
             border-radius: 12px;
             font-size: 0.92rem;
             border-left: 5px solid var(--leaf-green);
-            flex: 1;
         }
 
         /* 🌻 聯絡區塊 */
