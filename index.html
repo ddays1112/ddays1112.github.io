@@ -147,25 +147,28 @@
             margin-top: 2.5rem;
         }
 
-        /* 3D 翻轉舞台設定 */
+        /* 3D 翻轉舞台設定（調整對齊方式） */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
             gap: 2rem;
             margin-bottom: 1.5rem;
+            align-items: start; /* 讓同排卡片獨立縮放，不強行拉高 */
         }
 
-        /* 🃏 翻牌外殼容器 */
+        /* 🃏 翻牌外殼容器（改為彈性高度） */
         .flip-card {
             background-color: transparent;
-            height: 480px; 
+            min-height: 320px; /* 最小高度，取消固定 480px */
             perspective: 1000px; 
+            height: auto;
         }
 
         .flip-card-inner {
             position: relative;
             width: 100%;
             height: 100%;
+            min-height: 320px;
             text-align: left;
             transform-style: preserve-3d;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -180,6 +183,8 @@
 
         .card-front, .card-back {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             -webkit-backface-visibility: hidden; 
@@ -284,6 +289,7 @@
             border-radius: 12px;
             border: 3px solid white;
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            flex-shrink: 0;
         }
 
         .carousel-track {
@@ -759,7 +765,7 @@
         <h2 class="section-title">🤝 教育創新與社會參與 🧸</h2>
         <div class="grid">
             
-            <!-- 7. TFT (更新為 TFT2607.JPG + IMG_8560.JPG) -->
+            <!-- 7. TFT -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -853,7 +859,7 @@
                 </div>
             </div>
 
-            <!-- 9. LFT 營隊 (IMG_1328.jpg + IMG_1272.jpg) -->
+            <!-- 9. LFT 營隊 -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -904,7 +910,7 @@
         <h2 class="section-title">✈️ 國際移動與校園領導 🗺️</h2>
         <div class="grid">
             
-            <!-- 10. 日本交換 (IMG_2981.jpg) -->
+            <!-- 10. 日本交換 -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
