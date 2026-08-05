@@ -306,6 +306,27 @@
             scroll-snap-align: start;
             position: relative;
             background-color: rgba(255, 245, 157, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 🖼️ 第一張照片：橫向滿版填滿 */
+        .pic-cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* 🖼️ 第二張照片：留白置中 */
+        .pic-contain {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+            box-sizing: border-box;
+            display: block;
         }
 
         .back-pic {
@@ -491,11 +512,11 @@
                             <button class="carousel-btn next" onclick="moveCarousel(this, 1)">›</button>
                             <div class="carousel-track" onscroll="handleCarouselScroll(this)">
                                 <div class="carousel-slide">
-                                    <img src="pycon.png" alt="PyCon照片1" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="pycon.png" alt="PyCon照片1" class="pic-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">🐍</div>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="pyconhoster.JPG" alt="PyCon照片2" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="pyconhoster.JPG" alt="PyCon照片2" class="pic-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">🎤</div>
                                 </div>
                             </div>
@@ -536,7 +557,7 @@
                         <div class="carousel-wrapper" onclick="event.stopPropagation();">
                             <div class="carousel-track">
                                 <div class="carousel-slide">
-                                    <img src="Taiwanholy.JPG" alt="資安照片" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="Taiwanholy.JPG" alt="資安照片" class="pic-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">🔒</div>
                                 </div>
                             </div>
@@ -574,11 +595,11 @@
                             <button class="carousel-btn next" onclick="moveCarousel(this, 1)">›</button>
                             <div class="carousel-track" onscroll="handleCarouselScroll(this)">
                                 <div class="carousel-slide">
-                                    <img src="IMG_0871 (1).jpg" alt="專題照片1" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="IMG_0871 (1).jpg" alt="專題照片1" class="pic-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">💻</div>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="IMG_0829.jpg" alt="專題照片2" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="IMG_0829.jpg" alt="專題照片2" class="pic-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">🛠️</div>
                                 </div>
                             </div>
@@ -626,11 +647,11 @@
                             <button class="carousel-btn next" onclick="moveCarousel(this, 1)">›</button>
                             <div class="carousel-track" onscroll="handleCarouselScroll(this)">
                                 <div class="carousel-slide">
-                                    <img src="DSC00369.JPEG" alt="教育大數據照片1" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="DSC00369.JPEG" alt="教育大數據照片1" class="pic-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">📊</div>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="DSC00803.JPEG" alt="教育大數據照片2" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="DSC00803.JPEG" alt="教育大數據照片2" class="pic-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">🏆</div>
                                 </div>
                             </div>
@@ -670,7 +691,7 @@
                         <div class="carousel-wrapper" onclick="event.stopPropagation();">
                             <div class="carousel-track">
                                 <div class="carousel-slide">
-                                    <img src="IMG_1250.jpg" alt="愛貓一生照片" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="IMG_1250.jpg" alt="愛貓一生照片" class="pic-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">🐱</div>
                                 </div>
                             </div>
@@ -685,7 +706,7 @@
                 </div>
             </div>
 
-            <!-- 6. 合併後的屏東縣政府黑客松（數位松與教育松） -->
+            <!-- 6. 黑客松合併版 -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -708,11 +729,11 @@
                             <button class="carousel-btn next" onclick="moveCarousel(this, 1)">›</button>
                             <div class="carousel-track" onscroll="handleCarouselScroll(this)">
                                 <div class="carousel-slide">
-                                    <img src="IMG_9542.JPG" alt="黑客松照片1" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="IMG_9542.JPG" alt="黑客松照片1" class="pic-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">📱</div>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="IMG_2978.JPG" alt="黑客松照片2" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="IMG_2978.JPG" alt="黑客松照片2" class="pic-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">✏️</div>
                                 </div>
                             </div>
@@ -738,7 +759,7 @@
         <h2 class="section-title">🤝 教育創新與社會參與 🧸</h2>
         <div class="grid">
             
-            <!-- 7. TFT -->
+            <!-- 7. TFT (更新為 TFT2607.JPG + IMG_8560.JPG) -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -761,11 +782,11 @@
                             <button class="carousel-btn next" onclick="moveCarousel(this, 1)">›</button>
                             <div class="carousel-track" onscroll="handleCarouselScroll(this)">
                                 <div class="carousel-slide">
-                                    <img src="TFT.JPG" alt="TFT照片1" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="TFT2607.JPG" alt="TFT照片1" class="pic-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">🎒</div>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="TFT2607.JPG" alt="TFT照片2" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="IMG_8560.JPG" alt="TFT照片2" class="pic-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">🏫</div>
                                 </div>
                             </div>
@@ -785,7 +806,7 @@
                 </div>
             </div>
 
-            <!-- 8. 青澀芷蘭 (升級為雙圖滑動相簿) -->
+            <!-- 8. 青澀芷蘭 -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -808,11 +829,11 @@
                             <button class="carousel-btn next" onclick="moveCarousel(this, 1)">›</button>
                             <div class="carousel-track" onscroll="handleCarouselScroll(this)">
                                 <div class="carousel-slide">
-                                    <img src="FD53A37C-70D5-45C7-95AF-063E3A7C461D.JPG" alt="青澀芷蘭照片1" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="FD53A37C-70D5-45C7-95AF-063E3A7C461D.JPG" alt="青澀芷蘭照片1" class="pic-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">🕊️</div>
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="IMG_9577.JPG" alt="青澀芷蘭照片2" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="IMG_9577.JPG" alt="青澀芷蘭照片2" class="pic-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">🌸</div>
                                 </div>
                             </div>
@@ -832,7 +853,7 @@
                 </div>
             </div>
 
-            <!-- 9. LFT -->
+            <!-- 9. LFT 營隊 (IMG_1328.jpg + IMG_1272.jpg) -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -849,6 +870,24 @@
                         <div class="story-arrow-btn">點我看故事 ⬇️</div>
                     </div>
                     <div class="card-back">
+                        <div class="carousel-wrapper" onclick="event.stopPropagation();">
+                            <button class="carousel-btn prev" onclick="moveCarousel(this, -1)">‹</button>
+                            <button class="carousel-btn next" onclick="moveCarousel(this, 1)">›</button>
+                            <div class="carousel-track" onscroll="handleCarouselScroll(this)">
+                                <div class="carousel-slide">
+                                    <img src="IMG_1328.jpg" alt="LFT照片1" class="pic-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <div class="back-placeholder" style="display:none;">⛺</div>
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="IMG_1272.jpg" alt="LFT照片2" class="pic-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <div class="back-placeholder" style="display:none;">🌟</div>
+                                </div>
+                            </div>
+                            <div class="carousel-dots">
+                                <span class="carousel-dot active"></span>
+                                <span class="carousel-dot"></span>
+                            </div>
+                        </div>
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
                             <ul>
@@ -865,7 +904,7 @@
         <h2 class="section-title">✈️ 國際移動與校園領導 🗺️</h2>
         <div class="grid">
             
-            <!-- 10. 日本交換 -->
+            <!-- 10. 日本交換 (IMG_2981.jpg) -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -886,7 +925,7 @@
                         <div class="carousel-wrapper" onclick="event.stopPropagation();">
                             <div class="carousel-track">
                                 <div class="carousel-slide">
-                                    <img src="Japan.JPG" alt="日本照片" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="IMG_2981.jpg" alt="日本照片" class="pic-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">🇯🇵</div>
                                 </div>
                             </div>
