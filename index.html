@@ -551,7 +551,7 @@
                 </div>
             </div>
 
-            <!-- 3. 資訊學院專題 -->
+            <!-- 3. 資訊學院專題 (同步更新雙圖相簿) -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -569,11 +569,21 @@
                     </div>
                     <div class="card-back">
                         <div class="carousel-wrapper" onclick="event.stopPropagation();">
-                            <div class="carousel-track">
+                            <button class="carousel-btn prev" onclick="moveCarousel(this, -1)">‹</button>
+                            <button class="carousel-btn next" onclick="moveCarousel(this, 1)">›</button>
+                            <div class="carousel-track" onscroll="handleCarouselScroll(this)">
                                 <div class="carousel-slide">
-                                    <img src="information.JPG" alt="專題照片" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="IMG_0871 (1).jpg" alt="專題照片1" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">💻</div>
                                 </div>
+                                <div class="carousel-slide">
+                                    <img src="IMG_0829.jpg" alt="專題照片2" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <div class="back-placeholder" style="display:none;">🛠️</div>
+                                </div>
+                            </div>
+                            <div class="carousel-dots">
+                                <span class="carousel-dot active"></span>
+                                <span class="carousel-dot"></span>
                             </div>
                         </div>
                         <div class="back-text">
@@ -593,7 +603,7 @@
         <h2 class="section-title">📊 數據競賽類成果 ✨</h2>
         <div class="grid">
             
-            <!-- 4. 教育大數據 -->
+            <!-- 4. 教育大數據 (同步更新雙圖相簿) -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -611,11 +621,21 @@
                     </div>
                     <div class="card-back">
                         <div class="carousel-wrapper" onclick="event.stopPropagation();">
-                            <div class="carousel-track">
+                            <button class="carousel-btn prev" onclick="moveCarousel(this, -1)">‹</button>
+                            <button class="carousel-btn next" onclick="moveCarousel(this, 1)">›</button>
+                            <div class="carousel-track" onscroll="handleCarouselScroll(this)">
                                 <div class="carousel-slide">
-                                    <img src="bigdata.JPG" alt="大數據照片" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="DSC00369.JPEG" alt="教育大數據照片1" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">📊</div>
                                 </div>
+                                <div class="carousel-slide">
+                                    <img src="DSC00803.JPEG" alt="教育大數據照片2" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <div class="back-placeholder" style="display:none;">🏆</div>
+                                </div>
+                            </div>
+                            <div class="carousel-dots">
+                                <span class="carousel-dot active"></span>
+                                <span class="carousel-dot"></span>
                             </div>
                         </div>
                         <div class="back-text">
@@ -629,7 +649,7 @@
                 </div>
             </div>
 
-            <!-- 5. 愛貓一生 -->
+            <!-- 5. 愛貓一生 (同步更新全新照片) -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -649,7 +669,7 @@
                         <div class="carousel-wrapper" onclick="event.stopPropagation();">
                             <div class="carousel-track">
                                 <div class="carousel-slide">
-                                    <img src="cat.JPG" alt="愛貓一生照片" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="IMG_1250.jpg" alt="愛貓一生照片" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">🐱</div>
                                 </div>
                             </div>
