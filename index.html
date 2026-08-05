@@ -8,7 +8,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌻</text></svg>">
     
     <style>
-        /* 🌻 全域溫慢色調設定 */
+        /* 🌻 全域溫暖色調設定 */
         :root {
             --primary-yellow: #FFC107; 
             --light-yellow: #FFFDE7;   
@@ -173,7 +173,6 @@
             transition: transform 0s; 
         }
 
-        /* 当卡片被点击翻转时，优雅地转过去（0.6秒） */
         .flip-card.is-flipped .flip-card-inner {
             transform: rotateY(180deg);
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -241,17 +240,16 @@
             font-size: 1.3rem;
         }
 
-        .card-front ul {
+        .card-front ul, .card-back ul {
             padding-left: 1.2rem;
             margin: 0.5rem 0;
         }
 
-        .card-front li {
+        .card-front li, .card-back li {
             margin-bottom: 0.4rem;
             list-style-type: "🌻 "; 
         }
 
-        /* 黃色「點我看故事」動態跳動按鈕 */
         .story-arrow-btn {
             text-align: center;
             font-size: 0.95rem;
@@ -276,7 +274,7 @@
             60% { transform: translateY(-3px); }
         }
 
-        /* 📸 新增：超級流暢的手機原生滑動相簿 (Carousel) 容器造型 */
+        /* 📸 手機原生滑動相簿容器 */
         .carousel-wrapper {
             position: relative;
             width: 100%;
@@ -288,16 +286,14 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
 
-        /* 滑動軌道：支援手機手勢滑動與流暢動畫 */
         .carousel-track {
             display: flex;
             width: 100%;
             height: 100%;
             transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            /* 讓手機原生支援觸控左右滑動 */
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            scrollbar-width: none; /* 隱藏討厭的滾動條 */
+            scrollbar-width: none;
         }
         .carousel-track::-webkit-scrollbar {
             display: none;
@@ -329,7 +325,6 @@
             background-color: rgba(255, 245, 157, 0.5);
         }
 
-        /* 相簿左右方向鍵控制鈕 (電腦版滑鼠移入時會更明顯) */
         .carousel-btn {
             position: absolute;
             top: 50%;
@@ -352,7 +347,6 @@
         .carousel-btn.prev { left: 8px; }
         .carousel-btn.next { right: 8px; }
 
-        /* 相簿底部定位小圓點指示器 */
         .carousel-dots {
             position: absolute;
             bottom: 8px;
@@ -491,7 +485,6 @@
                         <div class="story-arrow-btn">點我看故事 ⬇️</div>
                     </div>
                     <div class="card-back">
-                        <!-- 📸 升級：流暢左右滑動相簿 (完美收納雙照片) -->
                         <div class="carousel-wrapper" onclick="event.stopPropagation();">
                             <button class="carousel-btn prev" onclick="moveCarousel(this, -1)">‹</button>
                             <button class="carousel-btn next" onclick="moveCarousel(this, 1)">›</button>
@@ -512,7 +505,10 @@
                         </div>
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
-                            這裡寫妳在 PyCon 開發組發生的故事、學到的事情，或是給學弟妹的小叮嚀喔！
+                            <ul>
+                                <li>首次挑戰開發組＋講者接待，解鎖第一次撰寫正式商務信件。</li>
+                                <li>首次拿起麥克風主持，深入了解講者背景，跨出技術人的舒適圈！</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -546,7 +542,10 @@
                         </div>
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
-                            這裡填寫妳參加好厲駭三屆計畫的感想，或是怎麼跟導師互動的心得！
+                            <ul>
+                                <li>深入 Web、逆向工程與惡意程式分析，實戰累積資安分析實力！</li>
+                                <li>遇到兩位超讚的導師，給予滿滿資源並鼓勵我們勇敢挑戰各種活動。</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -579,7 +578,10 @@
                         </div>
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
-                            畢業專題準備的心酸血淚、拿佳作的心情，都可以記錄在這裡。
+                            <ul>
+                                <li>開發 K12 焊接教材實作，首度針對教育現場的焊接痛點進行改良。</li>
+                                <li>結合硬體與教育，從使用者真實需求出發，打造有溫度的專題作品！</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -618,7 +620,10 @@
                         </div>
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
-                            拿到全國銅獎的實戰紀錄，清洗資料有多痛苦、得獎有多快樂！
+                            <ul>
+                                <li>實戰經歷完整數據分析流程：資料清洗、整理到餵入資料庫進行 AI 深度學習與回歸分析。</li>
+                                <li>用數據說話、解決真實問題，把硬核技術轉化為競賽獲獎成果！</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -651,7 +656,10 @@
                         </div>
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
-                            跟貓咪有關的大數據競賽！到底研究了什麼有趣的主題呢？快來分享。
+                            <ul>
+                                <li>將數據清洗與整理邏輯應用於特定主題，把乾淨資料餵給模型跑深度分析。</li>
+                                <li>結合商業思考與數據技術，體驗從 raw data 到產出洞察的完整流程！</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -685,7 +693,10 @@
                         </div>
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
-                            數位松黑客松在 36 小時狂飆產出提案的故事，可以寫在這裡。
+                            <ul>
+                                <li>分析鮮乳製品產業，探索如何透過數位媒介串聯第一線與第二線製程。</li>
+                                <li>挑戰 36HR 高壓提案，將在地農產議題與數位科技進行跨界整合！</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -718,7 +729,10 @@
                         </div>
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
-                            雖然沒有拿大獎，但是在教育松學到了什麼寶貴的洞察？
+                            <ul>
+                                <li>深入探討教育推廣議題，在眾多提案中反思「如何找出創新亮點與差異化」。</li>
+                                <li>雖然未拿大獎，但高壓發想過程帶來了對教育科技與提案定位的寶貴洞察！</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -748,7 +762,6 @@
                         <div class="story-arrow-btn">點我看故事 ⬇️</div>
                     </div>
                     <div class="card-back">
-                        <!-- 📸 升級：完美支援手機原生左右滑動與定位點 -->
                         <div class="carousel-wrapper" onclick="event.stopPropagation();">
                             <button class="carousel-btn prev" onclick="moveCarousel(this, -1)">‹</button>
                             <button class="carousel-btn next" onclick="moveCarousel(this, 1)">›</button>
@@ -769,7 +782,10 @@
                         </div>
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
-                            妳當大使與明日學校營隊志工時，跟孩子們或夥伴相處的感動故事。
+                            <ul>
+                                <li>深刻影響我生命軌跡的珍貴旅程，體會到發自內心付出與回饋的感動。</li>
+                                <li>在營隊與倡議中與夥伴、孩子深度交流，收穫了滿滿的溫暖與同理心。</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -803,7 +819,10 @@
                         </div>
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
-                            當活動組組員籌辦年會的幕後花絮、注意的事情寫這裡！
+                            <ul>
+                                <li>一直以來持續投入的志工服務，從籌辦大型年會中鍛鍊跨部門協調力。</li>
+                                <li>在陪伴與服務中學習專案管理，將善的循環轉化為實際的行動力！</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -828,7 +847,9 @@
                     <div class="card-back">
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
-                            在這裡探索自我、放鬆充電的故事。
+                            <ul>
+                                <li>沉浸在跨領域夥伴的腦力激盪中，體驗思維碰撞與自我探索的樂趣！</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -868,7 +889,9 @@
                         </div>
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
-                            兩個學期在北海道的雪國生活點滴、申請室蘭工大的小叮嚀！
+                            <ul>
+                                <li>體驗異國文化與不同的學術環境（可以詢問出國交換的相關事情）。</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -894,48 +917,19 @@
                     <div class="card-back">
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
-                            當文書長、辦三天大營隊最容易踩的坑和解決辦法！
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- ================= 🍂 勇敢嘗試 corners ================= -->
-        <h2 class="section-title">🍂 那些未完待續的勇敢嘗試 🪵</h2>
-        <div class="grid">
-            <div class="flip-card" onclick="toggleCard(this)">
-                <div class="flip-card-inner">
-                    <div class="card-front">
-                        <div>
-                            <div class="badge-container">
-                                <span class="badge">💡 企劃提案</span>
-                                <span class="ability-badge">🔥 抗壓與心態調適</span>
-                            </div>
-                            <h3>2025 法治教育競賽 & 法蘭瓷計畫</h3>
-                            <p><b>心得：</b> 雖然這兩項嘗試沒有得獎，但對我來說卻非常珍貴。</p>
                             <ul>
-                                <li><b>學到什麼：</b> 跨領域的法律創新思考、商業企劃書的完整撰寫結構。</li>
+                                <li>負責營隊與系上的行政文書處理，學習預算控管與時程進度掌握。</li>
                             </ul>
                         </div>
-                        <div class="story-arrow-btn">點我看故事 ⬇️</div>
-                    </div>
-                    <div class="card-back">
-                        <div class="back-text">
-                            <h3>📢 甲魚的小故事：</h3>
-                            沒得獎卻學到爆棚養分的心態調適課，學姐手把手開導。
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
 
         <!-- 🌻 聯絡區塊 -->
         <section class="contact-section">
             <h2>🌻 遇到困難了嗎？大膽敲甲魚學姐吧！</h2>
-            <p>不要害羞！不管你是想問某個比賽怎麼準備、交換怎麼申請，或者裝是大學生活好迷茫，訊息看到我都會回！</p>
+            <p>不要害羞！不管你是想問某個比賽怎麼準備、交換怎麼申請，或者只是大學生活好迷茫，訊息看到我都會回！</p>
             <div class="btn-container">
                 <a href="https://instagram.com/妳的帳號" target="_blank" class="contact-btn">💬 私訊我的 Instagram</a>
                 <a href="mailto:妳的Email@gmail.com" class="contact-btn">✉️ 寄信給甲魚學姐</a>
@@ -950,7 +944,6 @@
 
     <!-- 🌸 控制翻牌、滑動相簿與飄落特效的核心 JavaScript -->
     <script>
-        // 🃏 控制卡片翻轉
         function toggleCard(clickedCard) {
             const isFlipped = clickedCard.classList.contains('is-flipped');
             const allCards = document.querySelectorAll('.flip-card');
@@ -968,18 +961,15 @@
             }
         }
 
-        // 📸 1. 電腦版按鈕點擊切換相簿
         function moveCarousel(button, direction) {
             const wrapper = button.parentElement;
             const track = wrapper.querySelector('.carousel-track');
             const slides = track.querySelectorAll('.carousel-slide');
             const slideWidth = track.clientWidth;
             
-            // 計算目前滾動到第幾張
             let currentIndex = Math.round(track.scrollLeft / slideWidth);
             let nextIndex = currentIndex + direction;
             
-            // 循環邊界保護
             if (nextIndex < 0) nextIndex = slides.length - 1;
             if (nextIndex >= slides.length) nextIndex = 0;
             
@@ -989,7 +979,6 @@
             });
         }
 
-        // 📸 2. 手機版手指原生滑動時，自動同步更新底部的小圓點
         function handleCarouselScroll(track) {
             const wrapper = track.parentElement;
             const dots = wrapper.querySelectorAll('.carousel-dot');
@@ -1007,7 +996,6 @@
             });
         }
 
-        // 🌻 背景向日葵飄落
         function createFlower() {
             const flowerEmojis = ['🌻', '✨', '☀️', '🌸', '🎈'];
             const flower = document.createElement('div');
