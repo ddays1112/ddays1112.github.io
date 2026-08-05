@@ -447,7 +447,8 @@
                     <span class="info-tag">🤸 ENFP 快樂小太陽</span>
                 </div>
             </div>
-            <img src="IMG_9100.jpg" alt="甲魚學姐" class="profile-pic">
+            <!-- 📸 大頭貼 DSC05279.PNG -->
+            <img src="DSC05279.PNG" alt="甲魚學姐" class="profile-pic">
         </div>
     </header>
 
@@ -551,7 +552,7 @@
                 </div>
             </div>
 
-            <!-- 3. 資訊學院專題 (同步更新雙圖相簿) -->
+            <!-- 3. 資訊學院專題 -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -603,7 +604,7 @@
         <h2 class="section-title">📊 數據競賽類成果 ✨</h2>
         <div class="grid">
             
-            <!-- 4. 教育大數據 (同步更新雙圖相簿) -->
+            <!-- 4. 教育大數據 -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -649,7 +650,7 @@
                 </div>
             </div>
 
-            <!-- 5. 愛貓一生 (同步更新全新照片) -->
+            <!-- 5. 愛貓一生 -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -684,73 +685,47 @@
                 </div>
             </div>
 
-            <!-- 6. 數位松 -->
+            <!-- 6. 合併後的屏東縣政府黑客松（數位松與教育松） -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
                         <div>
                             <div class="badge-container">
                                 <span class="badge">🚀 社會創新 🥉</span>
-                                <span class="ability-badge">📱 數位原型提案</span>
+                                <span class="ability-badge">📱 數位與教育提案</span>
                             </div>
-                            <h3>屏東縣政府數位松黑客松</h3>
+                            <h3>屏東縣政府黑客松 (數位松與教育松)</h3>
                             <p><small style="opacity:0.8;">(2025屏東青年社會創新競賽)</small></p>
                             <ul>
-                                <li><b>專案成果：</b> 結合在地議題與數位科技，在 36HR 內生出簡報提案。</li>
+                                <li><b>專案成果：</b> 結合在地農產與教育科技議題，在 36HR 高壓下完成數位原型與提案。</li>
                             </ul>
                         </div>
                         <div class="story-arrow-btn">點我看故事 ⬇️</div>
                     </div>
                     <div class="card-back">
                         <div class="carousel-wrapper" onclick="event.stopPropagation();">
-                            <div class="carousel-track">
+                            <button class="carousel-btn prev" onclick="moveCarousel(this, -1)">‹</button>
+                            <button class="carousel-btn next" onclick="moveCarousel(this, 1)">›</button>
+                            <div class="carousel-track" onscroll="handleCarouselScroll(this)">
                                 <div class="carousel-slide">
-                                    <img src="digi.jpg" alt="數位松照片" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="IMG_9542.JPG" alt="黑客松照片1" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">📱</div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="back-text">
-                            <h3>📢 甲魚的小故事：</h3>
-                            <ul>
-                                <li>分析鮮乳製品產業，探索如何透過數位媒介串聯第一線與第二線製程。</li>
-                                <li> 將在地農產議題與數位科技進行跨界整合！</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 7. 教育松 -->
-            <div class="flip-card" onclick="toggleCard(this)">
-                <div class="flip-card-inner">
-                    <div class="card-front">
-                        <div>
-                            <div class="badge-container">
-                                <span class="badge">✏️ 社會創新</span>
-                                <span class="ability-badge">💡 教育科技發想</span>
-                            </div>
-                            <h3>屏東縣政府教育松競賽</h3>
-                            <ul>
-                                <li><b>收穫：</b> 教育相關數位議題探討。</li>
-                            </ul>
-                        </div>
-                        <div class="story-arrow-btn">點我看故事 ⬇️</div>
-                    </div>
-                    <div class="card-back">
-                        <div class="carousel-wrapper" onclick="event.stopPropagation();">
-                            <div class="carousel-track">
                                 <div class="carousel-slide">
-                                    <img src="edu_song.jpg" alt="教育松照片" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="IMG_2978.JPG" alt="黑客松照片2" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">✏️</div>
                                 </div>
                             </div>
+                            <div class="carousel-dots">
+                                <span class="carousel-dot active"></span>
+                                <span class="carousel-dot"></span>
+                            </div>
                         </div>
                         <div class="back-text">
                             <h3>📢 甲魚的小故事：</h3>
                             <ul>
-                                <li>深入探討教育推廣議題，在眾多提案中反思「如何找出創新亮點與差異化」。</li>
-                                <li>雖然未拿大獎，卻帶來了對教育科技與提案定位的洞察！</li>
+                                <li>探索鮮乳產業數位串聯，並深入反思教育推廣議題中的「創新亮點與差異化」。</li>
+                                <li>高壓發想過程帶來了對數位科技、在地農產與教育提案定位的深刻洞察！</li>
                             </ul>
                         </div>
                     </div>
@@ -763,7 +738,7 @@
         <h2 class="section-title">🤝 教育創新與社會參與 🧸</h2>
         <div class="grid">
             
-            <!-- 8. TFT -->
+            <!-- 7. TFT -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -810,7 +785,7 @@
                 </div>
             </div>
 
-            <!-- 9. 青澀芷蘭 -->
+            <!-- 8. 青澀芷蘭 (升級為雙圖滑動相簿) -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -829,11 +804,21 @@
                     </div>
                     <div class="card-back">
                         <div class="carousel-wrapper" onclick="event.stopPropagation();">
-                            <div class="carousel-track">
+                            <button class="carousel-btn prev" onclick="moveCarousel(this, -1)">‹</button>
+                            <button class="carousel-btn next" onclick="moveCarousel(this, 1)">›</button>
+                            <div class="carousel-track" onscroll="handleCarouselScroll(this)">
                                 <div class="carousel-slide">
-                                    <img src="blue.jpg" alt="青澀芷蘭照片" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="FD53A37C-70D5-45C7-95AF-063E3A7C461D.JPG" alt="青澀芷蘭照片1" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="back-placeholder" style="display:none;">🕊️</div>
                                 </div>
+                                <div class="carousel-slide">
+                                    <img src="IMG_9577.JPG" alt="青澀芷蘭照片2" class="back-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <div class="back-placeholder" style="display:none;">🌸</div>
+                                </div>
+                            </div>
+                            <div class="carousel-dots">
+                                <span class="carousel-dot active"></span>
+                                <span class="carousel-dot"></span>
                             </div>
                         </div>
                         <div class="back-text">
@@ -847,7 +832,7 @@
                 </div>
             </div>
 
-            <!-- 10. LFT -->
+            <!-- 9. LFT -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -880,7 +865,7 @@
         <h2 class="section-title">✈️ 國際移動與校園領導 🗺️</h2>
         <div class="grid">
             
-            <!-- 11. 日本交換 -->
+            <!-- 10. 日本交換 -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
@@ -916,7 +901,7 @@
                 </div>
             </div>
 
-            <!-- 12. 系學會 -->
+            <!-- 11. 系學會 -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="flip-card-inner">
                     <div class="card-front">
